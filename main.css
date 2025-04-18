@@ -1337,47 +1337,53 @@ body {
           animation-play-state: paused !important;
 }
 
-/* Estilos da cartinha de amor */
-.love-letter {
+/* Mensagem delicada */
+.flower-message {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  right: 10%;
+  transform: translateY(-50%);
   z-index: 100;
-  width: 300px;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  font-family: 'Arial', cursive;
-  text-align: center;
-  animation: float 3s ease-in-out infinite;
-  border: 1px solid #f8bbd0;
+  color: #ffebee;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 0 0 10px #ff80ab, 
+               0 0 20px #f50057,
+               0 0 30px rgba(245, 0, 87, 0.5);
+  font-size: 1.5rem;
+  line-height: 1.8;
+  text-align: right;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out 1s forwards,
+             glow 3s ease-in-out infinite alternate;
 }
 
-.letter-content {
-  color: #d81b60;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.letter-content p {
-  margin: 15px 0;
+.flower-message p {
+  margin: 0;
+  padding: 0;
 }
 
 .signature {
-  font-weight: bold;
-  font-size: 22px;
-  margin-top: 20px;
-  color: #c2185b;
-  font-style: italic;
+  font-size: 2rem;
+  margin-top: 15px;
+  display: inline-block;
+  transform: rotate(-5deg);
+  color: #f8bbd0;
 }
 
-@keyframes float {
-  0%, 100% {
-      transform: translate(-50%, -50%) translateY(0);
+@keyframes fadeIn {
+  to {
+      opacity: 1;
   }
-  50% {
-      transform: translate(-50%, -50%) translateY(-10px);
+}
+
+@keyframes glow {
+  from {
+      text-shadow: 0 0 5px #ff80ab, 
+                   0 0 10px #f50057;
+  }
+  to {
+      text-shadow: 0 0 10px #ff80ab, 
+                   0 0 20px #f50057,
+                   0 0 30px rgba(245, 0, 87, 0.5);
   }
 }
